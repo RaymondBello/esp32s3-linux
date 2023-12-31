@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.svi": "systemverilog",
+    "sdkconfig.h": "c"
+  }
+}

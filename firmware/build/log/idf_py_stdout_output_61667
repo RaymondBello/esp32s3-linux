@@ -1,0 +1,833 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x1064
+load:0x403c9700,len:0x9e0
+load:0x403cc700,len:0x291c
+entry 0x403c98d8
+etc ptr = 0x420b0000
+linux ptr = 0x42120000
+rootfs ptr = 0x42480000
+[    0.000000] Ignoring boot parameters at (ptrval)
+[    0.000000] Linux version 6.5.0 (esp32@buildkitsandbox) (xtensa-esp32s3-linux-uclibcfdpic-gcc (crosstool-NG UNKNOWN) 14.0.0 20231029 (experimental), GNU ld (crosstool-NG UNKNOWN) 2.40.50.20230424) #1 PREEMPT Sat Dec 30 22:10:43 UTC 2023
+[    0.000000] config ID: c2f0fffe:23090f1f
+[    0.000000] earlycon: esp32s3uart0 at MMIO32 0x60000000 (options '115200n8,40000000')
+[    0.000000] printk: bootconsole [esp32s3uart0] enabled
+[    0.000000] **********************************************************
+[    0.000000] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000] **                                                      **
+[    0.000000] ** This system shows unhashed kernel memory addresses   **
+[    0.000000] ** via the console, logs, and other interfaces. This    **
+[    0.000000] ** might reduce the security of your system.            **
+[    0.000000] **                                                      **
+[    0.000000] ** If you see this message and you are not debugging    **
+[    0.000000] ** the kernel, report this immediately to your system   **
+[    0.000000] ** administrator!                                       **
+[    0.000000] **                                                      **
+[    0.000000] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000] **********************************************************
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] Initmem setup node 0 [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon=esp32s3uart,mmio32,0x60000000,115200n8,40000000 console=ttyS0,115200n8 debug rw root=mtd:rootfs no_hash_pointers 
+[    0.000000] Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping off.  Total pages: 2032
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] virtual kernel memory layout:
+[    0.000000]     lowmem  : 0x3d800000 - 0x3e000000  (    8 MB)
+[    0.000000]     .text   : 0x42120000 - 0x4234eb30  ( 2234 kB)
+[    0.000000]     .rodata : 0x4234f000 - 0x423a9000  (  360 kB)
+[    0.000000]     .data   : 0x3d800000 - 0x3d87c6a0  (  497 kB)
+[    0.000000]     .init   : 0x3d87c6a0 - 0x3d87f890  (   12 kB)
+[    0.000000]     .bss    : 0x3d87f890 - 0x3d8b6410  (  218 kB)
+[    0.000000] Memory: 7340K/8192K available (2234K kernel code, 497K rwdata, 360K rodata, 88K init, 218K bss, 852K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=16, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 33
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Calibrating CPU frequency 160.00 MHz
+[    0.000000] clocksource: ccount: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 11945377789 ns
+[    0.000072] sched_clock: 32 bits at 160MHz, resolution 6ns, wraps every 13421772796ns
+[    0.009516] Calibrating delay loop (skipped)... 160.00 BogoMIPS preset
+[    0.013414] pid_max: default: 4096 minimum: 301
+[    0.021356] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.025455] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.080105] rcu: Hierarchical SRCU implementation.
+[    0.080894] rcu: 	Max phase no-delay instances is 1000.
+[    0.094345] devtmpfs: initialized
+[    0.120761] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.122088] futex hash table entries: 16 (order: -5, 192 bytes, linear)
+[    0.140878] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.172671] platform soc: Fixed dependency cycle(s) with /soc/intc@600c2000
+[    0.258826] clocksource: Switched to clocksource ccount
+[    0.313742] NET: Registered PF_INET protocol family
+[    0.322210] IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.348102] tcp_listen_portaddr_hash hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.351881] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.356749] TCP established hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.365387] TCP bind hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.372360] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.381216] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.384320] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.395490] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.408626] RPC: Registered named UNIX socket transport module.
+[    0.410941] RPC: Registered udp transport module.
+[    0.411536] RPC: Registered tcp transport module.
+[    0.414499] RPC: Registered tcp-with-tls transport module.
+[    0.420938] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.493014] Initialise system trusted keyrings
+[    0.497287] workingset: timestamp_bits=30 max_order=11 bucket_order=0
+[    0.508071] NFS: Registering the id_resolver key type
+[    0.510966] Key type id_resolver registered
+[    0.511781] Key type id_legacy registered
+[    0.514027] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.520347] Key type asymmetric registered
+[    0.522117] Asymmetric key parser 'x509' registered
+[    0.528306] io scheduler mq-deadline registered
+[    0.531555] io scheduler kyber registered
+[    2.546858] 60000000.serial: ttyS0 at MMIO 0x60000000 (irq = 1, base_baud = 2500000) is a ESP32S3 UART
+[    2.550378] printk: console [ttyS0] enabled
+[    2.550378] printk: console [ttyS0] enabled
+[    2.554149] printk: bootconsole [esp32s3uart0] disabled
+[    2.554149] printk: bootconsole [esp32s3uart0] disabled
+[    2.590590] random: crng init done
+[    2.629624] physmap-flash 42000000.flash: physmap platform flash device: [mem 0x42000000-0x42ffffff]
+[    2.641294] 6 esp32 partitions found on MTD device 42000000.flash
+[    2.642210] Creating 6 MTD partitions on "42000000.flash":
+[    2.642660] 0x00000000a000-0x00000000f000 : "nvs"
+[    2.647177] mtd: partition "nvs" doesn't start on an erase/write block boundary -- force read-only
+[    2.693261] 0x00000000f000-0x000000010000 : "phy_init"
+[    2.694102] mtd: partition "phy_init" doesn't start on an erase/write block boundary -- force read-only
+[    2.732100] 0x000000010000-0x0000000b0000 : "factory"
+[    2.766304] 0x0000000b0000-0x000000120000 : "etc"
+[    2.801070] 0x000000120000-0x000000480000 : "linux"
+[    2.834233] 0x000000480000-0x000000800000 : "rootfs"
+[    2.882390] ESP chipset detected [esp32-s3]
+[    2.931270] NET: Registered PF_INET6 protocol family
+[    3.022836] Segment Routing with IPv6
+[    3.024497] In-situ OAM (IOAM) with IPv6
+[    3.031152] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.057125] NET: Registered PF_PACKET protocol family
+[    3.058563] Key type dns_resolver registered
+[    3.270671] Loading compiled-in X.509 certificates
+[    3.366781] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    3.405544] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    3.410563] clk: Disabling unused clocks
+[    3.422745] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    3.423852] cfg80211: failed to load regulatory.db
+[    3.427432] cramfs: checking physical address 0x42480000 for linear cramfs image
+[    3.435201] cramfs: linear cramfs image on mtd:rootfs appears to be 3196 KB in size
+[    3.444624] VFS: Mounted root (cramfs filesystem) readonly on device 31:5.
+[    3.451468] devtmpfs: mounted
+[    3.453386] Freeing unused kernel image (initmem) memory: 8K
+[    3.456331] This architecture does not have kernel memory protection.
+[    3.464318] Run /sbin/init as init process
+[    3.466835]   with arguments:
+[    3.471360]     /sbin/init
+[    3.472468]   with environment:
+[    3.475558]     HOME=/
+[    3.477903]     TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+seedrng: can't create directory '/var/lib/seedrng': Read-only file system
+Starting network: Successfully initialized wpa_supplicant
+OK
+Starting inetd: OK
+
+Welcome to Buildroot
+buildroot login: root
+~ # ls -l
+total 0
+~ # df -h ,.[J[J.
+Filesystem                Size      Used Available Use% Mounted on
+mtd:rootfs                4.3M      4.3M         0 100% /
+~ # ping google.com
+PING google.com (142.251.32.78): 56 data bytes
+64 bytes from 142.251.32.78: seq=2 ttl=115 time=36.021 ms
+64 bytes from 142.251.32.78: seq=3 ttl=115 time=50.828 ms
+64 bytes from 142.251.32.78: seq=5 ttl=115 time=32.249 ms
+64 bytes from 142.251.32.78: seq=6 ttl=115 time=38.424 ms
+ç64 bytes from 142.251.32.78: seq=10 ttl=115 time=31.275 ms
+^C
+--- google.com ping statistics ---
+11 packets transmitted, 5 packets received, 54% packet loss
+round-trip min/avg/max = 31.275/37.759/50.828 ms
+~ # l
+sh: can't execute 'l': No such file or directory
+~ # s[Jgcc
+sh: can't execute 'gcc': No such file or directory
+~ # g++
+sh: can't execute 'g++': No such file or directory
+~ # l
+sh: can't execute 'l': No such file or directory
+~ # ls
+~ # cd ..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd bi/ # cd bin/[J
+/bin # l
+sh: can't execute 'l': No such file or directory
+/bin # ls
+[1;36march[m           [1;36mdnsdomainname[m  [1;36mlinux64[m        [1;36mnuke[m           [1;36msh[m
+[1;36mbase32[m         [1;36mdumpkmap[m       [1;36mln[m             [1;36mpidof[m          [1;36msleep[m
+[1;36mbase64[m         [1;36mecho[m           [1;36mlogin[m          [1;36mping[m           [1;36mstty[m
+[1;32mbusybox[m        [1;36megrep[m          [1;36mls[m             [1;36mpipe_progress[m  [1;36msu[m
+[1;36mcat[m            [1;36mfalse[m          [1;36mlsattr[m         [1;36mprintenv[m       [1;36msync[m
+[1;36mchattr[m         [1;36mfdflush[m        [1;36mmkdir[m          [1;36mps[m             [1;36mtar[m
+[1;36mchgrp[m          [1;36mfgrep[m          [1;36mmknod[m          [1;36mpwd[m            [1;36mtouch[m
+[1;36mchmod[m          [1;36mgetopt[m         [1;36mmktemp[m         [1;36mresume[m         [1;36mtrue[m
+[1;36mchown[m          [1;36mgrep[m           [1;36mmore[m           [1;36mrm[m             [1;36mumount[m
+[1;36mcp[m             [1;36mgunzip[m         [1;36mmount[m          [1;36mrmdir[m          [1;36muname[m
+[1;36mcpio[m           [1;36mgzip[m           [1;36mmountpoint[m     [1;36mrun-parts[m      [1;36musleep[m
+[1;36mdate[m           [1;36mhostname[m       [1;36mmt[m             [1;36msed[m            [1;36mvi[m
+[1;36mdd[m             [1;36mkill[m           [1;36mmv[m             [1;36msetarch[m        [1;36mwatch[m
+[1;36mdf[m             [1;36mlink[m           [1;36mnetstat[m        [1;36msetpriv[m        [1;36mzcat[m
+[1;36mdmesg[m          [1;36mlinux32[m        [1;36mnice[m           [1;36msetserial[m
+/bin # printenv
+TERM=vt100
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+USER=root
+LOGNAME=root
+HOME=/root
+SHELL=/bin/sh
+HUSH_VERSION=1.36.0
+PWD=/bin
+EDITOR=/bin/vi
+/bin # linux32
+/bin # l
+sh: can't execute 'l': No such file or directory
+/bin # file lin/bin # file lin[Jux32
+sh: can't execute 'file': No such file or directory
+/bin # dmesg
+[    0.000000] Ignoring boot parameters at (ptrval)
+[    0.000000] Linux version 6.5.0 (esp32@buildkitsandbox) (xtensa-esp32s3-linux-uclibcfdpic-gcc (crosstool-NG UNKNOWN) 14.0.0 20231029 (experimental), GNU ld (crosstool-NG UNKNOWN) 2.40.50.20230424) #1 PREEMPT Sat Dec 30 22:10:43 UTC 2023
+[    0.000000] config ID: c2f0fffe:23090f1f
+[    0.000000] earlycon: esp32s3uart0 at MMIO32 0x60000000 (options '115200n8,40000000')
+[    0.000000] printk: bootconsole [esp32s3uart0] enabled
+[    0.000000] **********************************************************
+[    0.000000] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000] **                                                      **
+[    0.000000] ** This system shows unhashed kernel memory addresses   **
+[    0.000000] ** via the console, logs, and other interfaces. This    **
+[    0.000000] ** might reduce the security of your system.            **
+[    0.000000] **                                                      **
+[    0.000000] ** If you see this message and you are not debugging    **
+[    0.000000] ** the kernel, report this immediately to your system   **
+[    0.000000] ** administrator!                                       **
+[    0.000000] **                                                      **
+[    0.000000] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000] **********************************************************
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] Initmem setup node 0 [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon=esp32s3uart,mmio32,0x60000000,115200n8,40000000 console=ttyS0,115200n8 debug rw root=mtd:rootfs no_hash_pointers 
+[    0.000000] Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping off.  Total pages: 2032
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] virtual kernel memory layout:
+[    0.000000]     lowmem  : 0x3d800000 - 0x3e000000  (    8 MB)
+[    0.000000]     .text   : 0x42120000 - 0x4234eb30  ( 2234 kB)
+[    0.000000]     .rodata : 0x4234f000 - 0x423a9000  (  360 kB)
+[    0.000000]     .data   : 0x3d800000 - 0x3d87c6a0  (  497 kB)
+[    0.000000]     .init   : 0x3d87c6a0 - 0x3d87f890  (   12 kB)
+[    0.000000]     .bss    : 0x3d87f890 - 0x3d8b6410  (  218 kB)
+[    0.000000] Memory: 7340K/8192K available (2234K kernel code, 497K rwdata, 360K rodata, 88K init, 218K bss, 852K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=16, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 33
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Calibrating CPU frequency 160.00 MHz
+[    0.000000] clocksource: ccount: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 11945377789 ns
+[    0.000072] sched_clock: 32 bits at 160MHz, resolution 6ns, wraps every 13421772796ns
+[    0.009516] Calibrating delay loop (skipped)... 160.00 BogoMIPS preset
+[    0.013414] pid_max: default: 4096 minimum: 301
+[    0.021356] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.025455] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.080105] rcu: Hierarchical SRCU implementation.
+[    0.080894] rcu: 	Max phase no-delay instances is 1000.
+[    0.094345] devtmpfs: initialized
+[    0.120761] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.122088] futex hash table entries: 16 (order: -5, 192 bytes, linear)
+[    0.140878] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.172671] platform soc: Fixed dependency cycle(s) with /soc/intc@600c2000
+[    0.258826] clocksource: Switched to clocksource ccount
+[    0.313742] NET: Registered PF_INET protocol family
+[    0.322210] IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.348102] tcp_listen_portaddr_hash hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.351881] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.356749] TCP established hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.365387] TCP bind hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.372360] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.381216] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.384320] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.395490] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.408626] RPC: Registered named UNIX socket transport module.
+[    0.410941] RPC: Registered udp transport module.
+[    0.411536] RPC: Registered tcp transport module.
+[    0.414499] RPC: Registered tcp-with-tls transport module.
+[    0.420938] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.493014] Initialise system trusted keyrings
+[    0.497287] workingset: timestamp_bits=30 max_order=11 bucket_order=0
+[    0.508071] NFS: Registering the id_resolver key type
+[    0.510966] Key type id_resolver registered
+[    0.511781] Key type id_legacy registered
+[    0.514027] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.520347] Key type asymmetric registered
+[    0.522117] Asymmetric key parser 'x509' registered
+[    0.528306] io scheduler mq-deadline registered
+[    0.531555] io scheduler kyber registered
+[    2.546858] 60000000.serial: ttyS0 at MMIO 0x60000000 (irq = 1, base_baud = 2500000) is a ESP32S3 UART
+[    2.550378] printk: console [ttyS0] enabled
+[    2.554149] printk: bootconsole [esp32s3uart0] disabled
+[    2.590590] random: crng init done
+[    2.629624] physmap-flash 42000000.flash: physmap platform flash device: [mem 0x42000000-0x42ffffff]
+[    2.641294] 6 esp32 partitions found on MTD device 42000000.flash
+[    2.642210] Creating 6 MTD partitions on "42000000.flash":
+[    2.642660] 0x00000000a000-0x00000000f000 : "nvs"
+[    2.647177] mtd: partition "nvs" doesn't start on an erase/write block boundary -- force read-only
+[    2.693261] 0x00000000f000-0x000000010000 : "phy_init"
+[    2.694102] mtd: partition "phy_init" doesn't start on an erase/write block boundary -- force read-only
+[    2.732100] 0x000000010000-0x0000000b0000 : "factory"
+[    2.766304] 0x0000000b0000-0x000000120000 : "etc"
+[    2.801070] 0x000000120000-0x000000480000 : "linux"
+[    2.834233] 0x000000480000-0x000000800000 : "rootfs"
+[    2.882390] ESP chipset detected [esp32-s3]
+[    2.931270] NET: Registered PF_INET6 protocol family
+[    3.022836] Segment Routing with IPv6
+[    3.024497] In-situ OAM (IOAM) with IPv6
+[    3.031152] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.057125] NET: Registered PF_PACKET protocol family
+[    3.058563] Key type dns_resolver registered
+[    3.270671] Loading compiled-in X.509 certificates
+[    3.366781] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    3.405544] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    3.410563] clk: Disabling unused clocks
+[    3.422745] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    3.423852] cfg80211: failed to load regulatory.db
+[    3.427432] cramfs: checking physical address 0x42480000 for linear cramfs image
+[    3.435201] cramfs: linear cramfs image on mtd:rootfs appears to be 3196 KB in size
+[    3.444624] VFS: Mounted root (cramfs filesystem) readonly on device 31:5.
+[    3.451468] devtmpfs: mounted
+[    3.453386] Freeing unused kernel image (initmem) memory: 8K
+[    3.456331] This architecture does not have kernel memory protection.
+[    3.464318] Run /sbin/init as init process
+[    3.466835]   with arguments:
+[    3.471360]     /sbin/init
+[    3.472468]   with environment:
+[    3.475558]     HOME=/
+[    3.477903]     TERM=linux
+/bin # ls
+[1;36march[m           [1;36mdnsdomainname[m  [1;36mlinux64[m        [1;36mnuke[m           [1;36msh[m
+[1;36mbase32[m         [1;36mdumpkmap[m       [1;36mln[m             [1;36mpidof[m          [1;36msleep[m
+[1;36mbase64[m         [1;36mecho[m           [1;36mlogin[m          [1;36mping[m           [1;36mstty[m
+[1;32mbusybox[m        [1;36megrep[m          [1;36mls[m             [1;36mpipe_progress[m  [1;36msu[m
+[1;36mcat[m            [1;36mfalse[m          [1;36mlsattr[m         [1;36mprintenv[m       [1;36msync[m
+[1;36mchattr[m         [1;36mfdflush[m        [1;36mmkdir[m          [1;36mps[m             [1;36mtar[m
+[1;36mchgrp[m          [1;36mfgrep[m          [1;36mmknod[m          [1;36mpwd[m            [1;36mtouch[m
+[1;36mchmod[m          [1;36mgetopt[m         [1;36mmktemp[m         [1;36mresume[m         [1;36mtrue[m
+[1;36mchown[m          [1;36mgrep[m           [1;36mmore[m           [1;36mrm[m             [1;36mumount[m
+[1;36mcp[m             [1;36mgunzip[m         [1;36mmount[m          [1;36mrmdir[m          [1;36muname[m
+[1;36mcpio[m           [1;36mgzip[m           [1;36mmountpoint[m     [1;36mrun-parts[m      [1;36musleep[m
+[1;36mdate[m           [1;36mhostname[m       [1;36mmt[m             [1;36msed[m            [1;36mvi[m
+[1;36mdd[m             [1;36mkill[m           [1;36mmv[m             [1;36msetarch[m        [1;36mwatch[m
+[1;36mdf[m             [1;36mlink[m           [1;36mnetstat[m        [1;36msetpriv[m        [1;36mzcat[m
+[1;36mdmesg[m          [1;36mlinux32[m        [1;36mnice[m           [1;36msetserial[m
+/bin # cd ..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd sb/ # cd sbin/[J
+/sbin # l
+sh: can't execute 'l': No such file or directory
+/sbin # ls
+[1;36marp[m                [1;36minit[m               [1;36mmdev[m               [1;36mstart-stop-daemon[m
+[1;36mblkid[m              [1;36minsmod[m             [1;36mmkdosfs[m            [1;36msulogin[m
+[1;36mdevmem[m             [1;36mip[m                 [1;36mmke2fs[m             [1;36mswapoff[m
+[1;36mfdisk[m              [1;36mipaddr[m             [1;36mmkswap[m             [1;36mswapon[m
+[1;36mfreeramdisk[m        [1;36miplink[m             [1;36mmodprobe[m           [1;36mswitch_root[m
+[1;36mfsck[m               [1;36mipneigh[m            [1;36mnameif[m             [1;36msysctl[m
+[1;36mfstrim[m             [1;36miproute[m            [1;36mpivot_root[m         [1;36msyslogd[m
+[1;36mgetty[m              [1;36miprule[m             [1;36mpoweroff[m           [1;36mtc[m
+[1;36mhalt[m               [1;36miptunnel[m           [1;36mreboot[m             [1;36mudhcpc[m
+[1;36mhdparm[m             [1;36mklogd[m              [1;36mrmmod[m              [1;36muevent[m
+[1;36mhwclock[m            [1;36mloadkmap[m           [1;36mroute[m              [1;36mvconfig[m
+[1;36mifconfig[m           [1;36mlosetup[m            [1;36mrun-init[m           [1;36mwatchdog[m
+[1;36mifdown[m             [1;36mlsmod[m              [1;36mrunlevel[m
+[1;36mifup[m               [1;36mmakedevs[m           [1;36msetconsole[m
+/sbin # init
+init: must be run as PID 1
+/sbin # reboot
+/sbin # Stopping inetd: OK
+Stopping network: [  260.659982] esp32_wifi:wait_and_decode_cmd_resp: Command[18] timed out
+[  260.660992] esp32_wifi:cmd_set_reg_domain: esp32: wait_and_decode_cmd_resp(priv, cmd_node) failure, ret: -22
+OK
+seedrng: can't create directory '/var/lib/seedrng': Read-only file system
+Stopping klogd: OK
+Stopping syslogd: OK
+umount: devtmpfs busy - remounted read-only
+The system is going down NOW!
+Sent SIGTERM to all processes
+/sbin # Sent SIGKILL to all processes
+Requesting system reboot
+[ �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4206943a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x1064
+load:0x403c9700,len:0x9e0
+load:0x403cc700,len:0x291c
+entry 0x403c98d8
+etc ptr = 0x420b0000
+linux ptr = 0x42120000
+rootfs ptr = 0x42480000
+[    0.000000] Ignoring boot parameters at (ptrval)
+[    0.000000] Linux version 6.5.0 (esp32@buildkitsandbox) (xtensa-esp32s3-linux-uclibcfdpic-gcc (crosstool-NG UNKNOWN) 14.0.0 20231029 (experimental), GNU ld (crosstool-NG UNKNOWN) 2.40.50.20230424) #1 PREEMPT Sat Dec 30 22:10:43 UTC 2023
+[    0.000000] config ID: c2f0fffe:23090f1f
+[    0.000000] earlycon: esp32s3uart0 at MMIO32 0x60000000 (options '115200n8,40000000')
+[    0.000000] printk: bootconsole [esp32s3uart0] enabled
+[    0.000000] **********************************************************
+[    0.000000] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000] **                                                      **
+[    0.000000] ** This system shows unhashed kernel memory addresses   **
+[    0.000000] ** via the console, logs, and other interfaces. This    **
+[    0.000000] ** might reduce the security of your system.            **
+[    0.000000] **                                                      **
+[    0.000000] ** If you see this message and you are not debugging    **
+[    0.000000] ** the kernel, report this immediately to your system   **
+[    0.000000] ** administrator!                                       **
+[    0.000000] **                                                      **
+[    0.000000] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000] **********************************************************
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] Initmem setup node 0 [mem 0x000000003d800000-0x000000003dffffff]
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon=esp32s3uart,mmio32,0x60000000,115200n8,40000000 console=ttyS0,115200n8 debug rw root=mtd:rootfs no_hash_pointers 
+[    0.000000] Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping off.  Total pages: 2032
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] virtual kernel memory layout:
+[    0.000000]     lowmem  : 0x3d800000 - 0x3e000000  (    8 MB)
+[    0.000000]     .text   : 0x42120000 - 0x4234eb30  ( 2234 kB)
+[    0.000000]     .rodata : 0x4234f000 - 0x423a9000  (  360 kB)
+[    0.000000]     .data   : 0x3d800000 - 0x3d87c6a0  (  497 kB)
+[    0.000000]     .init   : 0x3d87c6a0 - 0x3d87f890  (   12 kB)
+[    0.000000]     .bss    : 0x3d87f890 - 0x3d8b6410  (  218 kB)
+[    0.000000] Memory: 7340K/8192K available (2234K kernel code, 497K rwdata, 360K rodata, 88K init, 218K bss, 852K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=16, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 33
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Calibrating CPU frequency 160.00 MHz
+[    0.000000] clocksource: ccount: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 11945377789 ns
+[    0.000072] sched_clock: 32 bits at 160MHz, resolution 6ns, wraps every 13421772796ns
+[    0.009515] Calibrating delay loop (skipped)... 160.00 BogoMIPS preset
+[    0.013414] pid_max: default: 4096 minimum: 301
+[    0.021355] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.025454] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.080105] rcu: Hierarchical SRCU implementation.
+[    0.080894] rcu: 	Max phase no-delay instances is 1000.
+[    0.094345] devtmpfs: initialized
+[    0.120763] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.122090] futex hash table entries: 16 (order: -5, 192 bytes, linear)
+[    0.140884] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.172668] platform soc: Fixed dependency cycle(s) with /soc/intc@600c2000
+[    0.258813] clocksource: Switched to clocksource ccount
+[    0.313741] NET: Registered PF_INET protocol family
+[    0.322241] IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.348130] tcp_listen_portaddr_hash hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.351909] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.356779] TCP established hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.365414] TCP bind hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.372388] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.381244] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.384350] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.395525] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.408650] RPC: Registered named UNIX socket transport module.
+[    0.410967] RPC: Registered udp transport module.
+[    0.411567] RPC: Registered tcp transport module.
+[    0.414526] RPC: Registered tcp-with-tls transport module.
+[    0.420964] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.492979] Initialise system trusted keyrings
+[    0.497248] workingset: timestamp_bits=30 max_order=11 bucket_order=0
+[    0.508047] NFS: Registering the id_resolver key type
+[    0.510952] Key type id_resolver registered
+[    0.511764] Key type id_legacy registered
+[    0.514010] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.520333] Key type asymmetric registered
+[    0.522102] Asymmetric key parser 'x509' registered
+[    0.528291] io scheduler mq-deadline registered
+[    0.531540] io scheduler kyber registered
+[    2.546828] 60000000.serial: ttyS0 at MMIO 0x60000000 (irq = 1, base_baud = 2500000) is a ESP32S3 UART
+[    2.550351] printk: console [ttyS0] enabled
+[    2.550351] printk: console [ttyS0] enabled
+[    2.554123] printk: bootconsole [esp32s3uart0] disabled
+[    2.554123] printk: bootconsole [esp32s3uart0] disabled
+[    2.590581] random: crng init done
+[    2.629612] physmap-flash 42000000.flash: physmap platform flash device: [mem 0x42000000-0x42ffffff]
+[    2.641293] 6 esp32 partitions found on MTD device 42000000.flash
+[    2.642209] Creating 6 MTD partitions on "42000000.flash":
+[    2.642659] 0x00000000a000-0x00000000f000 : "nvs"
+[    2.647175] mtd: partition "nvs" doesn't start on an erase/write block boundary -- force read-only
+[    2.693275] 0x00000000f000-0x000000010000 : "phy_init"
+[    2.694120] mtd: partition "phy_init" doesn't start on an erase/write block boundary -- force read-only
+[    2.732091] 0x000000010000-0x0000000b0000 : "factory"
+[    2.766304] 0x0000000b0000-0x000000120000 : "etc"
+[    2.801092] 0x000000120000-0x000000480000 : "linux"
+[    2.834275] 0x000000480000-0x000000800000 : "rootfs"
+[    2.882388] ESP chipset detected [esp32-s3]
+[    2.931252] NET: Registered PF_INET6 protocol family
+[    3.022794] Segment Routing with IPv6
+[    3.024455] In-situ OAM (IOAM) with IPv6
+[    3.031104] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.057075] NET: Registered PF_PACKET protocol family
+[    3.058492] Key type dns_resolver registered
+[    3.270398] Loading compiled-in X.509 certificates
+[    3.365493] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    3.404019] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    3.410582] clk: Disabling unused clocks
+[    3.421320] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    3.422400] cfg80211: failed to load regulatory.db
+[    3.426036] cramfs: checking physical address 0x42480000 for linear cramfs image
+[    3.433744] cramfs: linear cramfs image on mtd:rootfs appears to be 3196 KB in size
+[    3.442738] VFS: Mounted root (cramfs filesystem) readonly on device 31:5.
+[    3.448166] devtmpfs: mounted
+[    3.451400] Freeing unused kernel image (initmem) memory: 8K
+[    3.454901] This architecture does not have kernel memory protection.
+[    3.463331] Run /sbin/init as init process
+[    3.465373]   with arguments:
+[    3.468288]     /sbin/init
+[    3.472543]   with environment:
+[    3.474141]     HOME=/
+[    3.476451]     TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+seedrng: can't create directory '/var/lib/seedrng': Read-only file system
+Starting network: Successfully initialized wpa_supplicant
+OK
+Starting inetd: OK
+
+Welcome to Buildroot
+buildroot login: root
+~ # cd ..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd run/ # cd run/[J
+/run # l
+sh: can't execute 'l': No such file or directory
+/run # ls
+[0;0mifstate[m             [1;34mlock[m                [0;0mudhcpc.espsta0.pid[m
+[0;0minetd.pid[m           [1;34mnetwork[m             [0;0mutmp[m
+[0;0mklogd.pid[m           [0;0msyslogd.pid[m
+/run # cd ..
+/ # cd et/ # cd etc/[J
+/etc # l
+sh: can't execute 'l': No such file or directory
+/etc # ls
+[1;34mdropbear[m             [0;0missue[m                [0;0mprotocols[m
+[0;0mfstab[m                [1;34mlibnl[m                [1;36mresolv.conf[m
+[0;0mgroup[m                [1;36mmtab[m                 [0;0mservices[m
+[0;0mhostname[m             [1;34mnetwork[m              [0;0mshadow[m
+[0;0mhosts[m                [1;36mos-release[m           [0;0mshells[m
+[0;0minetd.conf[m           [0;0mpasswd[m               [0;0mwpa_supplicant.conf[m
+[1;34minit.d[m               [0;0mprofile[m
+[0;0minittab[m              [1;34mprofile.d[m
+/etc # cd -
+sh: cd: -: No such file or directory
+/etc # cd ..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd pro/ # cd proc/[J
+/proc # ls
+[1;34m1[m              [1;34m20[m             [1;34m7[m              [0;0mfilesystems[m    [1;36mnet[m
+[1;34m10[m             [1;34m21[m             [1;34m8[m              [1;34mfs[m             [0;0mpagetypeinfo[m
+[1;34m100[m            [1;34m22[m             [1;34m81[m             [0;0minterrupts[m     [0;0mpartitions[m
+[1;34m101[m            [1;34m23[m             [1;34m9[m              [0;0miomem[m          [1;36mself[m
+[1;34m107[m            [1;34m24[m             [1;34m93[m             [0;0mioports[m        [0;0msoftirqs[m
+[1;34m11[m             [1;34m25[m             [0;0mbuddyinfo[m      [1;34mirq[m            [0;0mstat[m
+[1;34m12[m             [1;34m26[m             [1;34mbus[m            [0;0mkey-users[m      [1;34msys[m
+[1;34m120[m            [1;34m27[m             [0;0mcmdline[m        [0;0mkeys[m           [0;0msysrq-trigger[m
+[1;34m13[m             [1;34m28[m             [0;0mconsoles[m       [0;0mkmsg[m           [1;36mthread-self[m
+[1;34m14[m             [1;34m3[m              [0;0mcpuinfo[m        [0;0mloadavg[m        [0;0mtimer_list[m
+[1;34m15[m             [1;34m34[m             [0;0mcrypto[m         [0;0mlocks[m          [1;34mtty[m
+[1;34m16[m             [1;34m4[m              [1;36mdevice-tree[m    [0;0mmaps[m           [0;0muptime[m
+[1;34m17[m             [1;34m46[m             [0;0mdevices[m        [0;0mmeminfo[m        [0;0mversion[m
+[1;34m18[m             [1;34m5[m              [0;0mdiskstats[m      [0;0mmisc[m           [0;0mvmstat[m
+[1;34m19[m             [1;34m50[m             [1;34mdriver[m         [1;36mmounts[m         [0;0mzoneinfo[m
+[1;34m2[m              [1;34m6[m              [0;0mexecdomains[m    [0;0mmtd[m
+/proc # cat c/proc # cat c[Jpuinfo
+CPU count	: 1
+CPU list	: 0
+vendor_id	: Tensilica
+model		: Xtensa LX7.0.12
+core ID		: LX7_ESP32_S3_MP
+build ID	: 0x90f1f
+config ID	: c2f0fffe:23090f1f
+byte order	: little
+cpu MHz		: 160.00
+bogomips	: 320.00
+flags		: nmi debug ocd trax perf density boolean loop nsa minmax sext clamps mac16 mul16 mul32 mul32h fpu s32c1i 
+physical aregs	: 64
+misc regs	: 4
+ibreak		: 2
+dbreak		: 2
+perf counters	: 2
+num ints	: 32
+ext ints	: 26
+int levels	: 6
+timers		: 3
+debug level	: 6
+icache line size: 4
+icache ways	: 1
+icache size	: 0
+icache flags	: 
+dcache line size: 16
+dcache ways	: 1
+dcache size	: 0
+dcache flags	: 
+load/store exceptions	: 4108057
+load/store clock count	: 457612391
+/proc # cat st/proc # cat stat [J
+cpu  764 0 1071 8058 0 0 0 0 0 0
+cpu0 764 0 1071 8058 0 0 0 0 0 0
+intr 2417 0 113 131 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 5854
+btime 0
+processes 122
+procs_running 1
+procs_blocked 0
+softirq 3118 0 1224 0 103 0 0 0 0 0 1791
+/proc # cd d/proc # cd d[J[J[J ..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd pc[Jr/ # cd proc/[J
+/proc # ls
+[1;34m1[m              [1;34m20[m             [1;34m7[m              [0;0mfilesystems[m    [1;36mnet[m
+[1;34m10[m             [1;34m21[m             [1;34m8[m              [1;34mfs[m             [0;0mpagetypeinfo[m
+[1;34m100[m            [1;34m22[m             [1;34m81[m             [0;0minterrupts[m     [0;0mpartitions[m
+[1;34m101[m            [1;34m23[m             [1;34m9[m              [0;0miomem[m          [1;36mself[m
+[1;34m107[m            [1;34m24[m             [1;34m93[m             [0;0mioports[m        [0;0msoftirqs[m
+[1;34m11[m             [1;34m25[m             [0;0mbuddyinfo[m      [1;34mirq[m            [0;0mstat[m
+[1;34m12[m             [1;34m26[m             [1;34mbus[m            [0;0mkey-users[m      [1;34msys[m
+[1;34m124[m            [1;34m27[m             [0;0mcmdline[m        [0;0mkeys[m           [0;0msysrq-trigger[m
+[1;34m13[m             [1;34m28[m             [0;0mconsoles[m       [0;0mkmsg[m           [1;36mthread-self[m
+[1;34m14[m             [1;34m3[m              [0;0mcpuinfo[m        [0;0mloadavg[m        [0;0mtimer_list[m
+[1;34m15[m             [1;34m34[m             [0;0mcrypto[m         [0;0mlocks[m          [1;34mtty[m
+[1;34m16[m             [1;34m4[m              [1;36mdevice-tree[m    [0;0mmaps[m           [0;0muptime[m
+[1;34m17[m             [1;34m46[m             [0;0mdevices[m        [0;0mmeminfo[m        [0;0mversion[m
+[1;34m18[m             [1;34m5[m              [0;0mdiskstats[m      [0;0mmisc[m           [0;0mvmstat[m
+[1;34m19[m             [1;34m50[m             [1;34mdriver[m         [1;36mmounts[m         [0;0mzoneinfo[m
+[1;34m2[m              [1;34m6[m              [0;0mexecdomains[m    [0;0mmtd[m
+/proc # cd dr/proc # cd driver/[J
+/proc/driver # ls
+/proc/driver # cd ../[J
+/proc # cd bu/proc # cd bus/[J
+/proc/bus # ls
+/proc/bus # cd ..
+/proc # cd ..
+/ # ll
+sh: can't execute 'll': No such file or directory
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd dev
+/dev # ls
+[1;35mconsole[m    [1;35mptyd3[m      [1;35mptys2[m      [1;35mptyx1[m      [1;35mttyb8[m      [1;35mttyq7[m      [1;35mttyv6[m
+[1;36mfd[m         [1;35mptyd4[m      [1;35mptys3[m      [1;35mptyx2[m      [1;35mttyb9[m      [1;35mttyq8[m      [1;35mttyv7[m
+[1;35mfull[m       [1;35mptyd5[m      [1;35mptys4[m      [1;35mptyx3[m      [1;35mttyba[m      [1;35mttyq9[m      [1;35mttyv8[m
+[1;35mhwrng[m      [1;35mptyd6[m      [1;35mptys5[m      [1;35mptyx4[m      [1;35mttybb[m      [1;35mttyqa[m      [1;35mttyv9[m
+[1;35mkmsg[m       [1;35mptyd7[m      [1;35mptys6[m      [1;35mptyx5[m      [1;35mttybc[m      [1;35mttyqb[m      [1;35mttyva[m
+[1;35mlog[m        [1;35mptyd8[m      [1;35mptys7[m      [1;35mptyx6[m      [1;35mttybd[m      [1;35mttyqc[m      [1;35mttyvb[m
+[1;35mmem[m        [1;35mptyd9[m      [1;35mptys8[m      [1;35mptyx7[m      [1;35mttybe[m      [1;35mttyqd[m      [1;35mttyvc[m
+[1;35mmtd0[m       [1;35mptyda[m      [1;35mptys9[m      [1;35mptyx8[m      [1;35mttybf[m      [1;35mttyqe[m      [1;35mttyvd[m
+[1;35mmtd0ro[m     [1;35mptydb[m      [1;35mptysa[m      [1;35mptyx9[m      [1;35mttyc0[m      [1;35mttyqf[m      [1;35mttyve[m
+[1;35mmtd1[m       [1;35mptydc[m      [1;35mptysb[m      [1;35mptyxa[m      [1;35mttyc1[m      [1;35mttyr0[m      [1;35mttyvf[m
+[1;35mmtd1ro[m     [1;35mptydd[m      [1;35mptysc[m      [1;35mptyxb[m      [1;35mttyc2[m      [1;35mttyr1[m      [1;35mttyw0[m
+[1;35mmtd2[m       [1;35mptyde[m      [1;35mptysd[m      [1;35mptyxc[m      [1;35mttyc3[m      [1;35mttyr2[m      [1;35mttyw1[m
+[1;35mmtd2ro[m     [1;35mptydf[m      [1;35mptyse[m      [1;35mptyxd[m      [1;35mttyc4[m      [1;35mttyr3[m      [1;35mttyw2[m
+[1;35mmtd3[m       [1;35mptye0[m      [1;35mptysf[m      [1;35mptyxe[m      [1;35mttyc5[m      [1;35mttyr4[m      [1;35mttyw3[m
+[1;35mmtd3ro[m     [1;35mptye1[m      [1;35mptyt0[m      [1;35mptyxf[m      [1;35mttyc6[m      [1;35mttyr5[m      [1;35mttyw4[m
+[1;35mmtd4[m       [1;35mptye2[m      [1;35mptyt1[m      [1;35mptyy0[m      [1;35mttyc7[m      [1;35mttyr6[m      [1;35mttyw5[m
+[1;35mmtd4ro[m     [1;35mptye3[m      [1;35mptyt2[m      [1;35mptyy1[m      [1;35mttyc8[m      [1;35mttyr7[m      [1;35mttyw6[m
+[1;35mmtd5[m       [1;35mptye4[m      [1;35mptyt3[m      [1;35mptyy2[m      [1;35mttyc9[m      [1;35mttyr8[m      [1;35mttyw7[m
+[1;35mmtd5ro[m     [1;35mptye5[m      [1;35mptyt4[m      [1;35mptyy3[m      [1;35mttyca[m      [1;35mttyr9[m      [1;35mttyw8[m
+[1;35mmtdblock0[m  [1;35mptye6[m      [1;35mptyt5[m      [1;35mptyy4[m      [1;35mttycb[m      [1;35mttyra[m      [1;35mttyw9[m
+[1;35mmtdblock1[m  [1;35mptye7[m      [1;35mptyt6[m      [1;35mptyy5[m      [1;35mttycc[m      [1;35mttyrb[m      [1;35mttywa[m
+[1;35mmtdblock2[m  [1;35mptye8[m      [1;35mptyt7[m      [1;35mptyy6[m      [1;35mttycd[m      [1;35mttyrc[m      [1;35mttywb[m
+[1;35mmtdblock3[m  [1;35mptye9[m      [1;35mptyt8[m      [1;35mptyy7[m      [1;35mttyce[m      [1;35mttyrd[m      [1;35mttywc[m
+[1;35mmtdblock4[m  [1;35mptyea[m      [1;35mptyt9[m      [1;35mptyy8[m      [1;35mttycf[m      [1;35mttyre[m      [1;35mttywd[m
+[1;35mmtdblock5[m  [1;35mptyeb[m      [1;35mptyta[m      [1;35mptyy9[m      [1;35mttyd0[m      [1;35mttyrf[m      [1;35mttywe[m
+[1;35mnull[m       [1;35mptyec[m      [1;35mptytb[m      [1;35mptyya[m      [1;35mttyd1[m      [1;35mttys0[m      [1;35mttywf[m
+[1;35mptmx[m       [1;35mptyed[m      [1;35mptytc[m      [1;35mptyyb[m      [1;35mttyd2[m      [1;35mttys1[m      [1;35mttyx0[m
+[1;34mpts[m        [1;35mptyee[m      [1;35mptytd[m      [1;35mptyyc[m      [1;35mttyd3[m      [1;35mttys2[m      [1;35mttyx1[m
+[1;35mptya0[m      [1;35mptyef[m      [1;35mptyte[m      [1;35mptyyd[m      [1;35mttyd4[m      [1;35mttys3[m      [1;35mttyx2[m
+[1;35mptya1[m      [1;35mptyp0[m      [1;35mptytf[m      [1;35mptyye[m      [1;35mttyd5[m      [1;35mttys4[m      [1;35mttyx3[m
+[1;35mptya2[m      [1;35mptyp1[m      [1;35mptyu0[m      [1;35mptyyf[m      [1;35mttyd6[m      [1;35mttys5[m      [1;35mttyx4[m
+[1;35mptya3[m      [1;35mptyp2[m      [1;35mptyu1[m      [1;35mptyz0[m      [1;35mttyd7[m      [1;35mttys6[m      [1;35mttyx5[m
+[1;35mptya4[m      [1;35mptyp3[m      [1;35mptyu2[m      [1;35mptyz1[m      [1;35mttyd8[m      [1;35mttys7[m      [1;35mttyx6[m
+[1;35mptya5[m      [1;35mptyp4[m      [1;35mptyu3[m      [1;35mptyz2[m      [1;35mttyd9[m      [1;35mttys8[m      [1;35mttyx7[m
+[1;35mptya6[m      [1;35mptyp5[m      [1;35mptyu4[m      [1;35mptyz3[m      [1;35mttyda[m      [1;35mttys9[m      [1;35mttyx8[m
+[1;35mptya7[m      [1;35mptyp6[m      [1;35mptyu5[m      [1;35mptyz4[m      [1;35mttydb[m      [1;35mttysa[m      [1;35mttyx9[m
+[1;35mptya8[m      [1;35mptyp7[m      [1;35mptyu6[m      [1;35mptyz5[m      [1;35mttydc[m      [1;35mttysb[m      [1;35mttyxa[m
+[1;35mptya9[m      [1;35mptyp8[m      [1;35mptyu7[m      [1;35mptyz6[m      [1;35mttydd[m      [1;35mttysc[m      [1;35mttyxb[m
+[1;35mptyaa[m      [1;35mptyp9[m      [1;35mptyu8[m      [1;35mptyz7[m      [1;35mttyde[m      [1;35mttysd[m      [1;35mttyxc[m
+[1;35mptyab[m      [1;35mptypa[m      [1;35mptyu9[m      [1;35mptyz8[m      [1;35mttydf[m      [1;35mttyse[m      [1;35mttyxd[m
+[1;35mptyac[m      [1;35mptypb[m      [1;35mptyua[m      [1;35mptyz9[m      [1;35mttye0[m      [1;35mttysf[m      [1;35mttyxe[m
+[1;35mptyad[m      [1;35mptypc[m      [1;35mptyub[m      [1;35mptyza[m      [1;35mttye1[m      [1;35mttyt0[m      [1;35mttyxf[m
+[1;35mptyae[m      [1;35mptypd[m      [1;35mptyuc[m      [1;35mptyzb[m      [1;35mttye2[m      [1;35mttyt1[m      [1;35mttyy0[m
+[1;35mptyaf[m      [1;35mptype[m      [1;35mptyud[m      [1;35mptyzc[m      [1;35mttye3[m      [1;35mttyt2[m      [1;35mttyy1[m
+[1;35mptyb0[m      [1;35mptypf[m      [1;35mptyue[m      [1;35mptyzd[m      [1;35mttye4[m      [1;35mttyt3[m      [1;35mttyy2[m
+[1;35mptyb1[m      [1;35mptyq0[m      [1;35mptyuf[m      [1;35mptyze[m      [1;35mttye5[m      [1;35mttyt4[m      [1;35mttyy3[m
+[1;35mptyb2[m      [1;35mptyq1[m      [1;35mptyv0[m      [1;35mptyzf[m      [1;35mttye6[m      [1;35mttyt5[m      [1;35mttyy4[m
+[1;35mptyb3[m      [1;35mptyq2[m      [1;35mptyv1[m      [1;35mrandom[m     [1;35mttye7[m      [1;35mttyt6[m      [1;35mttyy5[m
+[1;35mptyb4[m      [1;35mptyq3[m      [1;35mptyv2[m      [1;35mrfkill[m     [1;35mttye8[m      [1;35mttyt7[m      [1;35mttyy6[m
+[1;35mptyb5[m      [1;35mptyq4[m      [1;35mptyv3[m      [1;34mshm[m        [1;35mttye9[m      [1;35mttyt8[m      [1;35mttyy7[m
+[1;35mptyb6[m      [1;35mptyq5[m      [1;35mptyv4[m      [1;36mstderr[m     [1;35mttyea[m      [1;35mttyt9[m      [1;35mttyy8[m
+[1;35mptyb7[m      [1;35mptyq6[m      [1;35mptyv5[m      [1;36mstdin[m      [1;35mttyeb[m      [1;35mttyta[m      [1;35mttyy9[m
+[1;35mptyb8[m      [1;35mptyq7[m      [1;35mptyv6[m      [1;36mstdout[m     [1;35mttyec[m      [1;35mttytb[m      [1;35mttyya[m
+[1;35mptyb9[m      [1;35mptyq8[m      [1;35mptyv7[m      [1;35mtty[m        [1;35mttyed[m      [1;35mttytc[m      [1;35mttyyb[m
+[1;35mptyba[m      [1;35mptyq9[m      [1;35mptyv8[m      [1;35mttyS0[m      [1;35mttyee[m      [1;35mttytd[m      [1;35mttyyc[m
+[1;35mptybb[m      [1;35mptyqa[m      [1;35mptyv9[m      [1;35mttya0[m      [1;35mttyef[m      [1;35mttyte[m      [1;35mttyyd[m
+[1;35mptybc[m      [1;35mptyqb[m      [1;35mptyva[m      [1;35mttya1[m      [1;35mttyp0[m      [1;35mttytf[m      [1;35mttyye[m
+[1;35mptybd[m      [1;35mptyqc[m      [1;35mptyvb[m      [1;35mttya2[m      [1;35mttyp1[m      [1;35mttyu0[m      [1;35mttyyf[m
+[1;35mptybe[m      [1;35mptyqd[m      [1;35mptyvc[m      [1;35mttya3[m      [1;35mttyp2[m      [1;35mttyu1[m      [1;35mttyz0[m
+[1;35mptybf[m      [1;35mptyqe[m      [1;35mptyvd[m      [1;35mttya4[m      [1;35mttyp3[m      [1;35mttyu2[m      [1;35mttyz1[m
+[1;35mptyc0[m      [1;35mptyqf[m      [1;35mptyve[m      [1;35mttya5[m      [1;35mttyp4[m      [1;35mttyu3[m      [1;35mttyz2[m
+[1;35mptyc1[m      [1;35mptyr0[m      [1;35mptyvf[m      [1;35mttya6[m      [1;35mttyp5[m      [1;35mttyu4[m      [1;35mttyz3[m
+[1;35mptyc2[m      [1;35mptyr1[m      [1;35mptyw0[m      [1;35mttya7[m      [1;35mttyp6[m      [1;35mttyu5[m      [1;35mttyz4[m
+[1;35mptyc3[m      [1;35mptyr2[m      [1;35mptyw1[m      [1;35mttya8[m      [1;35mttyp7[m      [1;35mttyu6[m      [1;35mttyz5[m
+[1;35mptyc4[m      [1;35mptyr3[m      [1;35mptyw2[m      [1;35mttya9[m      [1;35mttyp8[m      [1;35mttyu7[m      [1;35mttyz6[m
+[1;35mptyc5[m      [1;35mptyr4[m      [1;35mptyw3[m      [1;35mttyaa[m      [1;35mttyp9[m      [1;35mttyu8[m      [1;35mttyz7[m
+[1;35mptyc6[m      [1;35mptyr5[m      [1;35mptyw4[m      [1;35mttyab[m      [1;35mttypa[m      [1;35mttyu9[m      [1;35mttyz8[m
+[1;35mptyc7[m      [1;35mptyr6[m      [1;35mptyw5[m      [1;35mttyac[m      [1;35mttypb[m      [1;35mttyua[m      [1;35mttyz9[m
+[1;35mptyc8[m      [1;35mptyr7[m      [1;35mptyw6[m      [1;35mttyad[m      [1;35mttypc[m      [1;35mttyub[m      [1;35mttyza[m
+[1;35mptyc9[m      [1;35mptyr8[m      [1;35mptyw7[m      [1;35mttyae[m      [1;35mttypd[m      [1;35mttyuc[m      [1;35mttyzb[m
+[1;35mptyca[m      [1;35mptyr9[m      [1;35mptyw8[m      [1;35mttyaf[m      [1;35mttype[m      [1;35mttyud[m      [1;35mttyzc[m
+[1;35mptycb[m      [1;35mptyra[m      [1;35mptyw9[m      [1;35mttyb0[m      [1;35mttypf[m      [1;35mttyue[m      [1;35mttyzd[m
+[1;35mptycc[m      [1;35mptyrb[m      [1;35mptywa[m      [1;35mttyb1[m      [1;35mttyq0[m      [1;35mttyuf[m      [1;35mttyze[m
+[1;35mptycd[m      [1;35mptyrc[m      [1;35mptywb[m      [1;35mttyb2[m      [1;35mttyq1[m      [1;35mttyv0[m      [1;35mttyzf[m
+[1;35mptyce[m      [1;35mptyrd[m      [1;35mptywc[m      [1;35mttyb3[m      [1;35mttyq2[m      [1;35mttyv1[m      [1;35murandom[m
+[1;35mptycf[m      [1;35mptyre[m      [1;35mptywd[m      [1;35mttyb4[m      [1;35mttyq3[m      [1;35mttyv2[m      [1;35mzero[m
+[1;35mptyd0[m      [1;35mptyrf[m      [1;35mptywe[m      [1;35mttyb5[m      [1;35mttyq4[m      [1;35mttyv3[m
+[1;35mptyd1[m      [1;35mptys0[m      [1;35mptywf[m      [1;35mttyb6[m      [1;35mttyq5[m      [1;35mttyv4[m
+[1;35mptyd2[m      [1;35mptys1[m      [1;35mptyx0[m      [1;35mttyb7[m      [1;35mttyq6[m      [1;35mttyv5[m
+/dev # cd ..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd li/ # cd lib[J
+/lib # ls
+[1;34mfirmware[m             [1;36mlibatomic.so.1[m       [1;32mlibgcc_s.so.1[m
+[1;32mld-uClibc-1.0.44.so[m  [1;32mlibatomic.so.1.2.0[m   [1;32mlibuClibc-1.0.44.so[m
+[1;36mld-uClibc.so.0[m       [1;36mlibc.so.0[m
+[1;36mld-uClibc.so.1[m       [1;36mlibc.so.1[m
+/lib # cd fi/lib # cd firmware/[J
+/lib/firmware # ls
+[0;0mregulatory.db[m      [0;0mregulatory.db.p7s[m
+/lib/firmware # cd ../..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd li/ # cd lib[J3/ # cd lib32/[J
+/lib # ls
+[1;34mfirmware[m             [1;36mlibatomic.so.1[m       [1;32mlibgcc_s.so.1[m
+[1;32mld-uClibc-1.0.44.so[m  [1;32mlibatomic.so.1.2.0[m   [1;32mlibuClibc-1.0.44.so[m
+[1;36mld-uClibc.so.0[m       [1;36mlibc.so.0[m
+[1;36mld-uClibc.so.1[m       [1;36mlibc.so.1[m
+/lib # cd f/lib # cd firmware/[J
+/lib/firmware # ls
+[0;0mregulatory.db[m      [0;0mregulatory.db.p7s[m
+/lib/firmware # cd ../..
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd li/ # cd lib[J[Jnuxrc
+sh: cd: linuxrc: Not a directory
+/ # ls
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/ # cd linuxrx
+sh: cd: linuxrx: No such file or directory
+/ # / # cd linuxrx[J[Jc
+sh: cd: linuxrc: Not a directory
+/ # cd mnt
+/mnt # ls
+/mnt # cd ..
+/ # cd medio[Ja
+/media # ll[Js
+/media # cd ..
+/ # cd opt
+/opt # ls /
+[1;34mbin[m      [1;34mlib[m      [1;34mmedia[m    [1;34mproc[m     [1;34msbin[m     [1;34musr[m
+[1;34mdev[m      [1;36mlib32[m    [1;34mmnt[m      [1;34mroot[m     [1;34msys[m      [1;34mvar[m
+[1;34metc[m      [1;36mlinuxrc[m  [1;34mopt[m      [1;34mrun[m      [1;34mtmp[m
+/opt # ls
+/opt # cd ..
+/ # cd run
+/run # ls
+[0;0mifstate[m             [1;34mlock[m                [0;0mudhcpc.espsta0.pid[m
+[0;0minetd.pid[m           [1;34mnetwork[m             [0;0mutmp[m
+[0;0mklogd.pid[m           [0;0msyslogd.pid[m
+/run # cd ..
+/ # cd sy/ # cd sys/[J
+/sys # ls
+[1;34mblock[m     [1;34mclass[m     [1;34mdevices[m   [1;34mfs[m        [1;34mmodule[m
+[1;34mbus[m       [1;34mdev[m       [1;34mfirmware[m  [1;34mkernel[m
+/sys # cd b/sys # cd b[Jlo/sys # cd block/[J
+/sys/block # ls
+[1;36mmtdblock0[m  [1;36mmtdblock1[m  [1;36mmtdblock2[m  [1;36mmtdblock3[m  [1;36mmtdblock4[m  [1;36mmtdblock5[m
+/sys/block # cd ..
+/sys # cd bu/sys # cd bus/[J
+/sys/bus # ls
+[1;34mclockevents[m   [1;34mcontainer[m     [1;34mevent_source[m  [1;34mserial-base[m
+[1;34mclocksource[m   [1;34mcpu[m           [1;34mplatform[m      [1;34mworkqueue[m
+/sys/bus # cd ..
+/sys # ls
+[1;34mblock[m     [1;34mclass[m     [1;34mdevices[m   [1;34mfs[m        [1;34mmodule[m
+[1;34mbus[m       [1;34mdev[m       [1;34mfirmware[m  [1;34mkernel[m
+/sys # cd dev/sys # cd dev[J
+/sys/dev # ls
+[1;34mblock[m  [1;34mchar[m
+/sys/dev # cd ..
+/sys # ls
+[1;34mblock[m     [1;34mclass[

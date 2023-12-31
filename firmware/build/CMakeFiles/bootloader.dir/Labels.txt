@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/raybello/esp/esp32s3-linux/firmware/build/CMakeFiles/bootloader
+/Users/raybello/esp/esp32s3-linux/firmware/build/CMakeFiles/bootloader.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/CMakeFiles/bootloader-complete.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/raybello/esp/esp32s3-linux/firmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
